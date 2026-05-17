@@ -231,7 +231,6 @@ with st.sidebar:
 <div style="font-size:11px;color:#4b5563;line-height:1.8;">
 Built by <span style="color:#4ade80">Muhammad Murad</span><br>
 AgriEngineering 2026 · MDPI<br>
-IEEE YESIST12 Global Top 5<br><br>
 <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;">
 Stack: LangChain · CrewAI · FAISS<br>
 Groq (Llama 3.1) · Sentence Transformers<br>
