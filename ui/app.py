@@ -189,6 +189,8 @@ if "vector_store" not in st.session_state:
     st.session_state.vector_store = None
 if "index_ready" not in st.session_state:
     st.session_state.index_ready = False
+if "last_uploaded_file" not in st.session_state:
+    st.session_state.last_uploaded_file = None
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -294,6 +296,14 @@ def init_index(pdf_bytes: bytes | None = None):
 
 
 # Load index
+# Detect if a new PDF was uploaded and reset index if so
+current_file_name = uploaded_pdf.name if uploaded_pdf else None
+if current_file_name != st.session_state.last_uploaded_file:
+    st.session_state.index_ready = False
+    st.session_state.last_uploaded_file = current_file_name
+    # Clear the cache for init_index when a new file is uploaded
+    init_index.clear()
+
 if not st.session_state.index_ready:
     with st.spinner("⚙ Building vector index (first run ~60s on CPU)…"):
         pdf_bytes = None
