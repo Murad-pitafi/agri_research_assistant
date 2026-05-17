@@ -1,0 +1,24 @@
+# Core
+groq==0.9.0
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-groq==0.1.9
+
+# Vector store - CPU only, no GPU needed
+faiss-cpu==1.13.2
+
+# PDF parsing
+pypdf==4.3.1
+
+# Embeddings - runs fully on CPU, no GPU, ~90MB model
+sentence-transformers==3.0.1
+
+# Multi-agent
+crewai==0.51.0
+
+# UI
+streamlit==1.37.1
+
+# Utilities
+httpx==0.27.2
+python-dotenv==1.0.1
